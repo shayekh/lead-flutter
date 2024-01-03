@@ -8,18 +8,23 @@ void main() {
       ),
       body: Center(
           child: RichText(
-            text: TextSpan(
-              text: 'Hello',
-              style: TextStyle(fontSize: 35.0, color: Colors.blue, fontStyle: FontStyle.italic),
-              children: [
-                TextSpan(
-                  text: 'World',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35.0, color: Colors.amber, fontStyle: FontStyle.normal),
-                )
-              ]
-            ),
-          )
-      ),
+        text: TextSpan(
+            text: 'Hello',
+            style: TextStyle(
+                fontSize: 35.0,
+                color: Colors.blue,
+                fontStyle: FontStyle.italic),
+            children: [
+              TextSpan(
+                text: 'World',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 35.0,
+                    color: Colors.amber,
+                    fontStyle: FontStyle.normal),
+              )
+            ]),
+      )),
     ),
   ));
 }
