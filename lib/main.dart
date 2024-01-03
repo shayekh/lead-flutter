@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//shayekh ebne mizan -prom - shaku..
+//shayekh ebne mizan -prom - shaku.. proxy
 void main() {
   runApp(MaterialApp(
     home: Scaffold(
