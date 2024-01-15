@@ -6,9 +6,20 @@ void main() {
       appBar: AppBar(
         title: Text('Home'),
       ),
-      body: Center(
-          child: RichText(
-        text: TextSpan(
+      body: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Icon(Icons.camera, size: 50,),
+              Icon(Icons.share, size: 50,),
+            ],
+          ),
+          RichText(
+            text: TextSpan(
             text: 'Hello',
             style: TextStyle(
                 fontSize: 35.0,
@@ -24,7 +35,10 @@ void main() {
                     fontStyle: FontStyle.normal),
               )
             ]),
-      )),
+          ),
+          Text('Hello Flutter', style: TextStyle(fontSize: 35.0),)
+        ],
+      ),
     ),
   ));
 }
