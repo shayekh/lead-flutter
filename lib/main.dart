@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 //shayekh ebne mizan -prom - shaku.. proxy
+
+const url = 'https://th.bing.com/th/id/OIP.lELm1ifdvkgG9H0ZTL1tRQHaFj?w=203&h=180&c=7&r=0&o=5&pid=1.7';
 void main() {
-  runApp(MaterialApp(
+  runApp(MaterialApp(debugShowCheckedModeBanner: false,
     home: Scaffold(
       appBar: AppBar(
         title: Text('Home'),
@@ -10,6 +12,7 @@ void main() {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          Image.network(url, width: double.infinity, height: 250, fit: BoxFit.cover,),
           Row(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
