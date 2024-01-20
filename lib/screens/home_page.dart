@@ -21,7 +21,12 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.min,
-          children: [imageSection(), altHeader(), navSection(), bodySection()],
+          children: [
+            imageSection(),
+            altHeader(),
+            navSection(context),
+            bodySection()
+          ],
         ),
       ),
     );
@@ -37,9 +42,31 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Padding navSection() {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
+  Widget navSection(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(16.0),
+      margin: EdgeInsets.all(16.0),
+      decoration: BoxDecoration(
+          // color: Colors.amber,
+          borderRadius: BorderRadius.circular(24.0),
+          color: Theme.of(context).primaryColor,
+          border: Border.all(color: Colors.grey, width: 2),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey,
+              offset: Offset(0, 7),
+              blurRadius: 10,
+              spreadRadius: 2.0,
+            )
+          ],
+          gradient: LinearGradient(
+            colors: [Colors.blue, Colors.blue.shade200],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            stops: [0.8, 0.2],
+          )
+          // borderRadius: BorderRadius.only(bottomLeft: Radius.circular(24.0))
+          ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -47,14 +74,14 @@ class HomePage extends StatelessWidget {
             children: [
               Icon(
                 Icons.call,
-                color: Colors.blue,
+                color: Colors.white,
               ),
               SizedBox(
                 height: 10,
               ),
               Text(
                 "CALL",
-                style: TextStyle(fontSize: 16),
+                style: TextStyle(fontSize: 16, color: Colors.white),
               ),
             ],
           ),
@@ -62,14 +89,14 @@ class HomePage extends StatelessWidget {
             children: [
               Icon(
                 Icons.near_me,
-                color: Colors.blue,
+                color: Colors.white,
               ),
               SizedBox(
                 height: 10,
               ),
               Text(
                 "ROUTE",
-                style: TextStyle(fontSize: 16),
+                style: TextStyle(fontSize: 16, color: Colors.white),
               ),
             ],
           ),
@@ -77,14 +104,14 @@ class HomePage extends StatelessWidget {
             children: [
               Icon(
                 Icons.share,
-                color: Colors.blue,
+                color: Colors.white,
               ),
               SizedBox(
                 height: 10,
               ),
               Text(
                 "SHARE",
-                style: TextStyle(fontSize: 16),
+                style: TextStyle(fontSize: 16, color: Colors.white),
               ),
             ],
           )
