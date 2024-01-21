@@ -8,14 +8,13 @@ class ListViewExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('List View')),
-      body: ListView(
-        children: items
-            .map((item) => ListTile(
-                  title: Text(item),
-                ))
-            .toList(),
-      ),
-    );
+        appBar: AppBar(title: Text('List View')),
+        body: ListView.builder(
+            // scrollDirection: Axis.horizontal,
+            itemCount: items.length,
+            padding: EdgeInsets.all(16.0),
+            itemBuilder: (context, index) => ListTile(
+                  title: Text(items[index]),
+                )));
   }
 }
