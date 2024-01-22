@@ -9,12 +9,16 @@ class ListViewExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: Text('List View')),
-        body: ListView.builder(
+        body: GridView.builder(
             // scrollDirection: Axis.horizontal,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio: 0.8,
+            ),
             itemCount: items.length,
             padding: EdgeInsets.all(16.0),
-            itemBuilder: (context, index) => ListTile(
-                  title: Text(items[index]),
-                )));
+            itemBuilder: (context, index) => Card(
+              child: Center(child: Text(items[index])),
+            )));
   }
 }
